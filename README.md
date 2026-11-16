@@ -84,7 +84,6 @@ No Linux/macOS use `python3` no lugar de `py`.
 | Referências e limitações | [docs/referencias.md](docs/referencias.md), [energia/referencias.py](energia/referencias.py), seção 5 de [docs/analise.md](docs/analise.md) |
 | Testes com usuários e ajustes | [docs/testes_usuarios.md](docs/testes_usuarios.md): teste com Entrevistado 1, 2 e 3, 8 problemas encontrados e corrigidos; modo teste para participantes em [energia/modo_teste.py](energia/modo_teste.py) |
 | Códigos desenvolvidos e testes automatizados | `energia/`, `tests/` (46 testes) |
-| Roteiro do vídeo (até 3 min) | [docs/roteiro_video.md](docs/roteiro_video.md) |
 
 ## Estrutura
 
