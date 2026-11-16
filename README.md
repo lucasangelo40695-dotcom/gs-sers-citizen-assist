@@ -60,16 +60,6 @@ py main.py --relatorio
 py -m unittest discover -s tests -t .
 ```
 
-Teste com usuários reais: rode uma sessão guiada por participante e depois monte a tabela do registro.
-
-```bash
-py main.py --teste
-```
-
-```bash
-py main.py --montar-testes
-```
-
 No Linux/macOS use `python3` no lugar de `py`.
 
 ## Entregáveis do enunciado → onde estão
@@ -82,8 +72,8 @@ No Linux/macOS use `python3` no lugar de `py`.
 | Justificativas (custos, viabilidade, impactos ambientais) | [docs/analise.md](docs/analise.md) |
 | Integração ao assistente | [energia/assistente.py](energia/assistente.py), [main.py](main.py) |
 | Referências e limitações | [docs/referencias.md](docs/referencias.md), [energia/referencias.py](energia/referencias.py), seção 5 de [docs/analise.md](docs/analise.md) |
-| Testes com usuários e ajustes | [docs/testes_usuarios.md](docs/testes_usuarios.md): teste com Entrevistado 1, 2 e 3, 8 problemas encontrados e corrigidos; modo teste para participantes em [energia/modo_teste.py](energia/modo_teste.py) |
-| Códigos desenvolvidos e testes automatizados | `energia/`, `tests/` (46 testes) |
+| Testes com usuários e ajustes | [docs/testes_usuarios.md](docs/testes_usuarios.md): teste com Entrevistado 1, 2 e 3, 8 problemas encontrados e corrigidos |
+| Códigos desenvolvidos e testes automatizados | `energia/`, `tests/` (41 testes) |
 
 ## Estrutura
 
@@ -96,8 +86,7 @@ energia/
   assistente.py          intenções, respostas com fontes e limitações
   referencias.py         referências verificáveis citadas nas respostas
   relatorio.py           gera docs/resultados.md e dados/resultados.json
-  modo_teste.py          sessão guiada com usuários reais e registro automático no docs
 dados/                   premissas.json (entrada) e resultados.json (saída)
-docs/                    contexto, análise, resultados, referências, testes com usuários, roteiro
+docs/                    contexto, análise, resultados, referências, testes com usuários
 tests/                   unittest
 ```
