@@ -1,0 +1,210 @@
+{
+  "_sobre": "Premissas da análise de energia do Citizen Assist AI (GS 2026.2 – SERS). tipo: 'real' = valor publicado por fonte verificável; 'estimado' = valor derivado ou faixa de mercado, justificado em 'observacao'; 'hipotese' = escolha do grupo para o cenário de referência (pode ser alterada pelo usuário no assistente).",
+  "periodo_referencia": {
+    "valor": 12,
+    "unidade": "meses",
+    "tipo": "hipotese",
+    "observacao": "Todas as alternativas são comparadas para a mesma necessidade (banho de 4 pessoas) em 12 meses; o saldo financeiro também é mostrado em um horizonte de 10 anos."
+  },
+  "horizonte_anos": {
+    "valor": 10,
+    "unidade": "anos",
+    "tipo": "hipotese",
+    "observacao": "Horizonte menor que a vida útil dos equipamentos solares, para ser conservador. Sem correção monetária nem reajuste de tarifa."
+  },
+  "dias_por_mes": {
+    "valor": 30,
+    "unidade": "dias",
+    "tipo": "hipotese",
+    "observacao": "Mês comercial."
+  },
+  "consumo_mensal_familia_kwh": {
+    "valor": 180,
+    "unidade": "kWh/mês",
+    "tipo": "estimado",
+    "fonte": "EPE – Consumo Residencial Médio (CRM) nacional de 181,8 kWh/mês em ago/2026",
+    "observacao": "Usado só para mostrar o peso do chuveiro na conta; arredondado do CRM nacional."
+  },
+  "moradores": {
+    "valor": 4,
+    "unidade": "pessoas",
+    "tipo": "hipotese"
+  },
+  "banhos_por_pessoa_dia": {
+    "valor": 1,
+    "unidade": "banho/dia",
+    "tipo": "hipotese"
+  },
+  "duracao_banho_min": {
+    "valor": 8,
+    "unidade": "min",
+    "tipo": "estimado",
+    "observacao": "Duração típica relatada em campanhas de uso consciente; o usuário informa a própria duração no simulador."
+  },
+  "potencia_chuveiro_inverno_w": {
+    "valor": 5500,
+    "unidade": "W",
+    "tipo": "hipotese",
+    "observacao": "Potência nominal comum de chuveiros 127/220 V na posição inverno (dado de placa do aparelho)."
+  },
+  "potencia_chuveiro_verao_w": {
+    "valor": 3500,
+    "unidade": "W",
+    "tipo": "hipotese",
+    "observacao": "Potência comum na posição verão do mesmo aparelho."
+  },
+  "meses_posicao_inverno": {
+    "valor": 6,
+    "unidade": "meses/ano",
+    "tipo": "hipotese",
+    "observacao": "Cenário atual: chave em inverno metade do ano."
+  },
+  "temperatura_agua_fria_c": {
+    "valor": 20,
+    "unidade": "°C",
+    "tipo": "estimado",
+    "observacao": "Média anual aproximada da água da rede em São Paulo; varia com a estação."
+  },
+  "temperatura_banho_c": {
+    "valor": 38,
+    "unidade": "°C",
+    "tipo": "hipotese"
+  },
+  "eficiencia_chuveiro": {
+    "valor": 0.95,
+    "unidade": "fração",
+    "tipo": "estimado",
+    "observacao": "Resistência elétrica converte quase toda a energia em calor; perdas pequenas para o ambiente."
+  },
+  "tarifa_b1_vigente_sem_tributos": {
+    "valor": 0.789,
+    "unidade": "R$/kWh",
+    "tipo": "real",
+    "fonte": "ANEEL – reajuste tarifário Enel SP 2026 (vigente desde 04/07/2026): B1 residencial TE R$ 0,317 + TUSD R$ 0,472, conforme tabela publicada em calculadoraenergia.com.br",
+    "observacao": "Sem tributos e sem bandeira. Conferência: B1 2025 (R$ 0,72518) x (1 + 9,02% de reajuste residencial 2026) = R$ 0,7906, coerente com R$ 0,789."
+  },
+  "tributos_fracao": {
+    "valor": 0.17,
+    "unidade": "fração",
+    "tipo": "estimado",
+    "fonte": "RICMS-SP art. 52, V (ICMS 12% para consumo residencial de 91 a 200 kWh; Lei 12.185/2006 isenta até 90 kWh)",
+    "observacao": "ICMS de 12% (real, pela lei paulista) + PIS/COFINS de cerca de 5% (estimado: a alíquota efetiva muda todo mês e aparece na fatura). Aplicado 'por dentro': tarifa / (1 - tributos)."
+  },
+  "fator_emissao_sin_kgco2_kwh": {
+    "valor": 0.0461,
+    "unidade": "kgCO2/kWh",
+    "tipo": "real",
+    "fonte": "MCTI/SIRENE – planilha 'Inventários Corporativos 2026' (Inventario_2026_janset.xlsx): fator médio anual do SIN em 2025 = 0,0461 tCO2/MWh",
+    "observacao": "Último ano completo. Série: 2023 = 0,0385; 2024 = 0,0545; 2025 = 0,0461 tCO2/MWh. Os meses secos (ago–nov) chegam a 0,07–0,11."
+  },
+  "solar_termico_custo_kit": {
+    "valor": 4405,
+    "unidade": "R$",
+    "tipo": "real",
+    "fonte": "Anúncio Ribsol Energia Solar – kit boiler 300 L + 2 coletores 150x100 cm (consulta em 16/11/2026)",
+    "observacao": "Preço de varejo do equipamento, sem instalação. Outros kits de 300 L encontrados: R$ 3.690 (coletor a vácuo) a R$ 5.301 (Komeco baixa pressão)."
+  },
+  "solar_termico_custo_instalacao": {
+    "valor": 1133,
+    "unidade": "R$",
+    "tipo": "estimado",
+    "fonte": "SINAPI composição 103518 (aquecedor solar 300 L, fornecimento e instalação), itens de mão de obra R$ 616,90 + R$ 516,49 (ref. 09/2026)",
+    "observacao": "Mão de obra de referência pública; adaptações hidráulicas maiores (abrir paredes) podem custar bem mais."
+  },
+  "solar_termico_fracao_solar": {
+    "valor": 0.7,
+    "unidade": "fração",
+    "tipo": "estimado",
+    "observacao": "Parte da energia do banho fornecida pelo sol ao longo do ano; sistemas bem dimensionados no Sudeste ficam em geral entre 60% e 80%. O restante vem do apoio elétrico."
+  },
+  "solar_termico_manutencao_ano": {
+    "valor": 80,
+    "unidade": "R$/ano",
+    "tipo": "estimado",
+    "observacao": "Limpeza dos coletores e revisão do reservatório e das válvulas (média anual, com troca eventual de peças)."
+  },
+  "solar_termico_vida_util_anos": {
+    "valor": 20,
+    "unidade": "anos",
+    "tipo": "estimado",
+    "observacao": "Vida útil típica informada por fabricantes de coletores e reservatórios; maior que o horizonte de 10 anos usado."
+  },
+  "fv_potencia_kwp": {
+    "valor": 1.1,
+    "unidade": "kWp",
+    "tipo": "hipotese",
+    "observacao": "Dois módulos de 550 Wp: menor sistema prático que cobre o consumo do chuveiro."
+  },
+  "fv_custo_kit": {
+    "valor": 4656,
+    "unidade": "R$",
+    "tipo": "real",
+    "fonte": "Anúncio Rotheo Energia – kit 1,1 kWp on-grid (2 módulos 550 Wp + microinversor Deye 2 kW + estrutura), preço Pix (consulta em 16/11/2026)",
+    "observacao": "Só o equipamento entregue; não inclui instalação nem homologação."
+  },
+  "fv_custo_instalacao_homologacao": {
+    "valor": 1500,
+    "unidade": "R$",
+    "tipo": "estimado",
+    "fonte": "Faixas de mercado: homologação/projeto de R$ 800 a R$ 3.500; referência nacional Radar Solfácil R$ 2,49/Wp para sistemas maiores",
+    "observacao": "Instalação, projeto com ART e homologação na Enel para um sistema muito pequeno. Total ≈ R$ 5,59/Wp, acima da média nacional porque sistemas pequenos não ganham escala."
+  },
+  "fv_horas_sol_pleno": {
+    "valor": 4.65,
+    "unidade": "kWh/m²·dia",
+    "tipo": "real",
+    "fonte": "CRESESB/CEPEL – SunData v3, estação São Paulo (23,5° S; 46,649° O), plano inclinado igual à latitude (24° N), média anual (consulta em 16/11/2026)",
+    "observacao": "Plano horizontal: 4,45. Mínimo mensal no inclinado: 4,12 (julho); máximo: 5,22 (fevereiro)."
+  },
+  "fv_performance_ratio": {
+    "valor": 0.75,
+    "unidade": "fração",
+    "tipo": "estimado",
+    "observacao": "Perdas de temperatura, sujeira, cabos e inversor."
+  },
+  "fv_fator_compensacao": {
+    "valor": 0.85,
+    "unidade": "fração",
+    "tipo": "estimado",
+    "fonte": "Lei 14.300/2022 (marco legal da micro e minigeração distribuída)",
+    "observacao": "O banho é à noite, então quase toda a geração é injetada na rede e vira crédito; desde 2023 parte da TUSD Fio B deixa de ser compensada. Estimamos que 1 kWh de crédito vale 85% de 1 kWh da tarifa."
+  },
+  "fv_vida_util_anos": {
+    "valor": 25,
+    "unidade": "anos",
+    "tipo": "estimado",
+    "observacao": "Garantia de desempenho típica dos módulos (80% da potência após 25 anos); o inversor costuma ser trocado uma vez nesse período."
+  },
+  "fv_manutencao_ano": {
+    "valor": 100,
+    "unidade": "R$/ano",
+    "tipo": "estimado",
+    "observacao": "Limpeza dos módulos."
+  },
+  "habitos_duracao_alvo_min": {
+    "valor": 5,
+    "unidade": "min",
+    "tipo": "hipotese",
+    "observacao": "Meta de banho de 5 minutos recomendada em campanhas de uso consciente de água e energia."
+  },
+  "habitos_meses_posicao_inverno": {
+    "valor": 4,
+    "unidade": "meses/ano",
+    "tipo": "hipotese",
+    "observacao": "Usar a posição inverno só nos meses mais frios (jun–set)."
+  },
+  "custo_disponibilidade_kwh": {
+    "valor": 30,
+    "unidade": "kWh/mês",
+    "tipo": "real",
+    "fonte": "ANEEL – Resolução Normativa 1.000/2021 (custo de disponibilidade, ligação monofásica)",
+    "observacao": "Mínimo faturado em ligação monofásica; os créditos solares não reduzem a conta abaixo disso."
+  },
+  "tarifa_social_isencao_kwh": {
+    "valor": 80,
+    "unidade": "kWh/mês",
+    "tipo": "real",
+    "fonte": "Lei 15.235/2025 (conversão da MP 1.300/2025) e regulamentação ANEEL de jul/2025",
+    "observacao": "Famílias do CadÚnico com renda de até meio salário mínimo por pessoa não pagam a energia até 80 kWh/mês; o que passar de 80 kWh é cobrado."
+  }
+}

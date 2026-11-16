@@ -1,0 +1,108 @@
+{
+  "cenario": {
+    "consumo_chuveiro_kwh_mes": 72.0,
+    "consumo_total_kwh_mes": 180,
+    "participacao_chuveiro": 0.4,
+    "tarifa": 0.9506024096385544,
+    "custo_chuveiro_ano": 821.320481927711,
+    "emissao_chuveiro_kg_ano": 39.830400000000004,
+    "vazao_l_min": 3.4042044911610128,
+    "energia_termica_banho_kwh": 0.57,
+    "energia_eletrica_banho_kwh": 0.6
+  },
+  "alternativas": [
+    {
+      "codigo": "A",
+      "nome": "Hábitos e eficiência no chuveiro elétrico",
+      "renovavel": false,
+      "investimento": 0.0,
+      "manutencao_ano": 0.0,
+      "reducao_kwh_ano": 363.99999999999994,
+      "cobertura_chuveiro": 0.4212962962962962,
+      "economia_bruta_ano": 346.0192771084336,
+      "economia_liquida_ano": 346.0192771084336,
+      "payback_anos": 0.0,
+      "saldo_horizonte": 3460.1927710843356,
+      "co2_evitado_kg_ano": 16.780399999999997,
+      "viavel": true,
+      "viabilidade": [
+        "Sem custo e imediata; vale para quem mora de aluguel.",
+        "Depende de todos os moradores mudarem o hábito."
+      ],
+      "impactos": [
+        "Reduz energia e também água (banho mais curto).",
+        "Alivia o pico de demanda do fim da tarde, quando o chuveiro pesa mais na rede."
+      ],
+      "limitacoes": [
+        "Economia proporcional ao hábito real; se o banho já é curto, o ganho é pequeno.",
+        "Não muda a fonte de energia: continua 100% da rede elétrica."
+      ],
+      "vida_util_anos": 0.0
+    },
+    {
+      "codigo": "B",
+      "nome": "Aquecedor solar de água (renovável térmica)",
+      "renovavel": true,
+      "investimento": 5538,
+      "manutencao_ano": 80,
+      "reducao_kwh_ano": 604.8,
+      "cobertura_chuveiro": 0.7,
+      "economia_bruta_ano": 574.9243373493978,
+      "economia_liquida_ano": 494.9243373493978,
+      "payback_anos": 11.189589159545376,
+      "saldo_horizonte": -588.7566265060223,
+      "co2_evitado_kg_ano": 27.88128,
+      "viavel": true,
+      "viabilidade": [
+        "Exige telhado com sol (face norte, sem sombra) e estrutura para o reservatório.",
+        "Exige casa própria ou autorização do proprietário e adaptação hidráulica.",
+        "Investimento inicial alto para baixa renda; procurar programas habitacionais ou financiamento."
+      ],
+      "impactos": [
+        "Usa o sol diretamente para aquecer a água, sem conversão em eletricidade (alta eficiência).",
+        "Tira o chuveiro do horário de pico, o maior benefício para o sistema elétrico.",
+        "Fabricação usa cobre, alumínio e vidro; descarte deve ser feito em reciclagem."
+      ],
+      "limitacoes": [
+        "Em dias nublados seguidos o apoio elétrico é usado e a economia cai.",
+        "Fração solar de 70% é estimativa; depende de instalação, orientação e consumo de água."
+      ],
+      "vida_util_anos": 20
+    },
+    {
+      "codigo": "C",
+      "nome": "Energia solar fotovoltaica (renovável elétrica)",
+      "renovavel": true,
+      "investimento": 6156,
+      "manutencao_ano": 100,
+      "reducao_kwh_ano": 1173.8925000000002,
+      "cobertura_chuveiro": 1.5984375000000002,
+      "economia_bruta_ano": 1115.905039156627,
+      "economia_liquida_ano": 1015.905039156627,
+      "payback_anos": 6.059621483037943,
+      "saldo_horizonte": 4003.0503915662703,
+      "co2_evitado_kg_ano": 63.66640500000001,
+      "viavel": true,
+      "viabilidade": [
+        "Exige telhado com sol, casa própria e projeto homologado na distribuidora.",
+        "Quem mora de aluguel pode avaliar energia solar por assinatura (geração compartilhada)."
+      ],
+      "impactos": [
+        "Gera eletricidade renovável que também abate outros aparelhos da casa.",
+        "O banho é à noite: a energia vai para a rede de dia e volta como crédito; não alivia o pico.",
+        "Módulos e inversor exigem logística reversa no fim da vida útil."
+      ],
+      "limitacoes": [
+        "Regras de compensação (Fio B) mudam até 2029 e podem reduzir o valor do crédito.",
+        "A conta nunca fica abaixo do custo de disponibilidade (30 kWh monofásico).",
+        "Geração varia com o clima e com o endereço; confirmar no SunData/CRESESB."
+      ],
+      "vida_util_anos": 25
+    }
+  ],
+  "recomendacao": [
+    "Comece pela alternativa A (hábitos): não custa nada e reduz o consumo já no próximo mês.",
+    "C – Energia solar fotovoltaica (renovável elétrica): retorno estimado em 6,1 anos.",
+    "B – Aquecedor solar de água (renovável térmica): retorno estimado em 11,2 anos."
+  ]
+}
